@@ -1,0 +1,1225 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#0b0c09" />
+<meta name="robots" content="noindex, nofollow" />
+<link rel="icon" type="image/jpeg" href="logo-idealiza.jpg" />
+<title>Proposta Idealiza Locações</title>
+<meta name="description" content="Proposta comercial: plataforma completa de gestão de locação para a Idealiza Locações — landing, painel administrativo, apps na App Store e Google Play e VozChat integrado." />
+
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="pt_BR" />
+<meta property="og:site_name" content="Proposta • Idealiza Locações" />
+<meta property="og:url" content="https://pedcastr.github.io/proposta-idealiza-locacoes/" />
+<meta property="og:title" content="Idealiza Locações — proposta da plataforma de gestão" />
+<meta property="og:description" content="Painel, apps próprios, VozChat, integração bancária, conciliação por extrato, rateio de custos, Autentique, Detran e Brick. A mesma base da Raposo e da Zéloc." />
+<meta property="og:image" content="https://pedcastr.github.io/proposta-idealiza-locacoes/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://pedcastr.github.io/proposta-idealiza-locacoes/og-image.png" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,300..900;1,62..125,300..900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+
+<style>
+:root{
+  --ink:#0b0c09; --ink-2:#121410; --ink-3:#1a1d16; --line-d:rgba(255,255,255,.09);
+  --paper:#f2f1ea; --paper-2:#e8e7de; --line:#d9d8cd; --text:#14150f; --muted:#64665b; --muted-d:#9a9d90;
+  --lime:#d6f51c; --lime-2:#c2e000; --lime-soft:rgba(214,245,28,.14);
+  --red:#ff5a43; --ok:#3ddc84;
+  --radius:16px; --maxw:1180px;
+  --sans:'Archivo',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+  --mono:'JetBrains Mono',ui-monospace,Consolas,monospace;
+  --ease:cubic-bezier(.2,.7,.1,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--sans);background:var(--ink);color:#ecede6;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+button{font-family:inherit}
+::selection{background:var(--lime);color:var(--ink)}
+.wrap{width:100%;max-width:var(--maxw);margin:0 auto;padding:0 24px}
+@media(max-width:640px){.wrap{padding:0 16px}}
+
+.mono{font-family:var(--mono)}
+.label{font-family:var(--mono);font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted-d);display:flex;align-items:center;gap:12px}
+.label::before{content:'';width:28px;height:1px;background:currentColor;opacity:.6}
+.light .label{color:var(--muted)}
+.display{font-weight:800;font-stretch:118%;letter-spacing:-.03em;line-height:.98}
+.it{font-style:italic;font-weight:900;font-stretch:125%}
+.hl{color:var(--lime)}
+.light .hl{background:linear-gradient(transparent 58%,var(--lime) 58%,var(--lime) 92%,transparent 92%);color:inherit;padding:0 .08em}
+h2.title{font-size:clamp(2rem,5.2vw,3.7rem);margin:18px 0 18px}
+.lead{font-size:clamp(1.02rem,1.6vw,1.18rem);color:var(--muted-d);max-width:640px}
+.light .lead{color:var(--muted)}
+section{position:relative}
+.pad{padding:120px 0}
+@media(max-width:720px){.pad{padding:80px 0}}
+.light{background:var(--paper);color:var(--text)}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(28px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+.rv.in{opacity:1;transform:none}
+.rv.d1{transition-delay:.08s}.rv.d2{transition-delay:.16s}.rv.d3{transition-delay:.24s}.rv.d4{transition-delay:.32s}
+.split .w{display:inline-block;overflow:hidden;vertical-align:top;padding:0 .04em .2em;margin:0 -.04em -.2em}
+.split .w>span{display:inline-block;transform:translateY(105%);transition:transform 1s var(--ease)}
+.split.in .w>span{transform:none}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;gap:10px;padding:15px 24px;border-radius:999px;font-weight:700;font-size:.98rem;border:1px solid transparent;cursor:pointer;transition:transform .25s var(--ease),background .25s,color .25s,border-color .25s;white-space:nowrap}
+.btn svg{width:18px;height:18px;transition:transform .25s var(--ease)}
+.btn:hover svg{transform:translateX(4px)}
+.btn-lime{background:var(--lime);color:var(--ink)}
+.btn-lime:hover{background:#e6ff4d;transform:translateY(-2px)}
+.btn-line{border-color:rgba(255,255,255,.25);color:#fff}
+.btn-line:hover{border-color:var(--lime);color:var(--lime)}
+.light .btn-line{border-color:rgba(0,0,0,.2);color:var(--text)}
+.btn-dark{background:var(--ink);color:#fff}
+.btn-dark:hover{background:#000;transform:translateY(-2px)}
+
+/* progress */
+.progress{position:fixed;top:0;left:0;height:2px;background:var(--lime);width:0;z-index:100}
+
+/* NAV */
+.nav{position:fixed;inset:0 0 auto 0;z-index:60;transition:background .3s,border-color .3s,transform .4s var(--ease);border-bottom:1px solid transparent}
+.nav.solid{background:rgba(11,12,9,.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-color:var(--line-d)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;height:72px;gap:16px}
+.brand{display:flex;align-items:center;gap:12px;min-width:0}
+.brand img{width:40px;height:40px;border-radius:10px}
+.brand b{display:block;font-weight:800;font-stretch:115%;font-size:.98rem;letter-spacing:-.01em;white-space:nowrap}
+.brand small{display:block;font-family:var(--mono);font-size:.66rem;color:var(--muted-d);letter-spacing:.08em;text-transform:uppercase}
+.nav-links{display:flex;align-items:center;gap:28px;font-size:.92rem}
+.nav-links a:not(.btn){color:#c9cbc0;transition:color .2s}
+.nav-links a:not(.btn):hover{color:var(--lime)}
+.nav-links .btn{padding:10px 18px;font-size:.88rem}
+@media(max-width:920px){.nav-links a:not(.btn){display:none}}
+@media(max-width:420px){.brand small{display:none}.nav-links .btn{padding:9px 14px}.brand b{font-size:.9rem}}
+@media(max-width:560px){.hero-ctas .btn{flex:1 1 100%;justify-content:center}.hero-meta{gap:16px 24px}}
+
+/* HERO */
+.hero{min-height:100vh;padding:150px 0 90px;overflow:hidden;display:flex;align-items:center}
+.hero-bg{position:absolute;inset:0;pointer-events:none}
+.hero-bg .grid{position:absolute;inset:-2px;background-image:linear-gradient(var(--line-d) 1px,transparent 1px),linear-gradient(90deg,var(--line-d) 1px,transparent 1px);background-size:64px 64px;-webkit-mask-image:radial-gradient(ellipse 80% 70% at 50% 40%,#000 30%,transparent 80%);mask-image:radial-gradient(ellipse 80% 70% at 50% 40%,#000 30%,transparent 80%)}
+.hero-bg .glow{position:absolute;width:720px;height:720px;border-radius:50%;background:radial-gradient(circle,rgba(214,245,28,.22),transparent 62%);left:var(--gx,60%);top:var(--gy,30%);transform:translate(-50%,-50%);transition:left .6s var(--ease),top .6s var(--ease)}
+.hero-in{position:relative;display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
+@media(max-width:1000px){.hero-in{grid-template-columns:1fr;gap:64px}}
+.hero-in>*,.base-grid>*,.feat>*,.apps-grid>*,.dev>*,.prices>*,.incl>*{min-width:0}
+.for{max-width:100%}
+.hero h1{font-size:clamp(2.5rem,6.2vw,5rem);margin:26px 0 26px}
+.hero .lead{font-size:clamp(1.05rem,1.7vw,1.22rem)}
+.hero-ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:36px}
+.hero-meta{display:flex;flex-wrap:wrap;gap:26px;margin-top:48px;padding-top:26px;border-top:1px solid var(--line-d)}
+.hero-meta div{font-size:.9rem}
+.hero-meta small{display:block;font-family:var(--mono);font-size:.68rem;color:var(--muted-d);text-transform:uppercase;letter-spacing:.12em;margin-bottom:4px}
+.for{display:inline-flex;align-items:center;gap:12px;padding:6px 16px 6px 6px;border:1px solid var(--line-d);border-radius:999px;font-size:.86rem;color:#d7d9cf;background:rgba(255,255,255,.03)}
+.for img{width:30px;height:30px;border-radius:50%}
+
+/* dashboard mock */
+.mock{position:relative;border-radius:18px;background:linear-gradient(180deg,#171a13,#0f110c);border:1px solid var(--line-d);box-shadow:0 50px 120px -30px rgba(0,0,0,.8),0 0 0 1px rgba(214,245,28,.05);overflow:hidden;transform:perspective(1400px) rotateY(-9deg) rotateX(4deg);transition:transform .8s var(--ease)}
+.mock:hover{transform:perspective(1400px) rotateY(-3deg) rotateX(1deg)}
+@media(max-width:1000px){.mock{transform:none}.mock:hover{transform:none}}
+.mock-top{display:flex;align-items:center;gap:7px;padding:12px 14px;border-bottom:1px solid var(--line-d)}
+.mock-top i{width:9px;height:9px;border-radius:50%;background:#2c3026}
+.mock-top span{margin-left:10px;font-family:var(--mono);font-size:.68rem;color:var(--muted-d)}
+.mock-body{display:grid;grid-template-columns:52px 1fr;min-height:360px}
+.mock-side{border-right:1px solid var(--line-d);padding:14px 0;display:flex;flex-direction:column;align-items:center;gap:14px}
+.mock-side b{width:22px;height:22px;border-radius:6px;background:#22261d}
+.mock-side b.on{background:var(--lime)}
+.mock-main{padding:18px;display:flex;flex-direction:column;gap:14px;min-width:0}
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+@media(max-width:520px){.kpis{grid-template-columns:repeat(2,1fr)}}
+.kpi{background:#1a1d16;border:1px solid var(--line-d);border-radius:10px;padding:10px 12px;min-width:0}
+.kpi small{display:block;font-family:var(--mono);font-size:.58rem;color:var(--muted-d);text-transform:uppercase;letter-spacing:.08em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.kpi strong{font-size:1rem;font-weight:800;font-stretch:110%;white-space:nowrap}
+.kpi.l strong{color:var(--lime)}
+.chart{background:#1a1d16;border:1px solid var(--line-d);border-radius:10px;padding:12px;position:relative}
+.chart small{font-family:var(--mono);font-size:.6rem;color:var(--muted-d);text-transform:uppercase;letter-spacing:.08em}
+.chart svg{width:100%;height:120px;display:block;margin-top:6px}
+.chart .ln{stroke-dasharray:900;stroke-dashoffset:900;animation:draw 2.6s .6s var(--ease) forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+.chart .ar{opacity:0;animation:fade 1.2s 1.8s forwards}
+@keyframes fade{to{opacity:1}}
+.rows{display:flex;flex-direction:column;gap:6px}
+.row{display:flex;align-items:center;gap:10px;font-size:.74rem;background:#16190f;border:1px solid var(--line-d);border-radius:8px;padding:8px 10px}
+.row .dot{width:7px;height:7px;border-radius:50%;flex:none}
+.row span{flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:#cfd1c6}
+.row em{font-style:normal;font-family:var(--mono);font-size:.66rem;padding:2px 8px;border-radius:99px}
+.toast{position:absolute;right:16px;bottom:16px;display:flex;align-items:center;gap:10px;background:var(--lime);color:var(--ink);padding:10px 14px;border-radius:12px;font-size:.78rem;font-weight:700;box-shadow:0 18px 40px rgba(0,0,0,.45);transform:translateY(140%);opacity:0;transition:transform .7s var(--ease),opacity .7s;max-width:calc(100% - 32px)}
+.toast.show{transform:none;opacity:1}
+.toast small{display:block;font-weight:500;font-size:.68rem;opacity:.75}
+.toast svg{width:18px;height:18px;flex:none}
+.mock-caption{font-family:var(--mono);font-size:.66rem;color:var(--muted-d);text-align:right;margin-top:10px;letter-spacing:.06em}
+
+/* MARQUEE */
+.marquee{border-block:1px solid var(--line-d);overflow:hidden;padding:22px 0;background:var(--ink-2)}
+.mq-track{display:flex;width:max-content;animation:mq 38s linear infinite}
+.marquee:hover .mq-track{animation-play-state:paused}
+.mq-track span{display:flex;align-items:center;gap:22px;padding-right:22px;font-weight:800;font-stretch:120%;font-size:clamp(1.2rem,2.4vw,1.7rem);letter-spacing:-.01em;white-space:nowrap;color:#d9dbd1}
+.mq-track span i{width:8px;height:8px;background:var(--lime);transform:rotate(45deg);display:block}
+@keyframes mq{to{transform:translateX(-50%)}}
+
+/* BASE */
+.base-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:end}
+@media(max-width:900px){.base-grid{grid-template-columns:1fr;gap:40px}}
+.facts{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);margin-top:70px}
+@media(max-width:760px){.facts{grid-template-columns:1fr}}
+.fact{padding:30px 26px 6px 0}
+.fact+.fact{padding-left:26px;border-left:1px solid var(--line)}
+@media(max-width:760px){.fact+.fact{padding-left:0;border-left:0;border-top:1px solid var(--line)}}
+.fact strong{display:block;font-size:clamp(2.8rem,5vw,4rem);font-weight:900;font-stretch:120%;letter-spacing:-.04em;line-height:1}
+.fact p{color:var(--muted);margin-top:10px;font-size:.98rem}
+.inherit{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+.chip{font-family:var(--mono);font-size:.76rem;padding:8px 14px;border-radius:999px;border:1px solid var(--line);background:#fff}
+.chip.new{background:var(--ink);color:var(--lime);border-color:var(--ink)}
+
+/* ENTREGÁVEIS */
+.deliv{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:60px}
+@media(max-width:1000px){.deliv{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.deliv{grid-template-columns:1fr}}
+.card{position:relative;background:var(--ink-2);border:1px solid var(--line-d);border-radius:var(--radius);padding:28px 24px;overflow:hidden;transition:border-color .3s,transform .4s var(--ease)}
+.card::before{content:'';position:absolute;inset:0;background:radial-gradient(420px circle at var(--mx,50%) var(--my,50%),rgba(214,245,28,.13),transparent 45%);opacity:0;transition:opacity .35s;pointer-events:none}
+.card:hover{border-color:rgba(214,245,28,.35);transform:translateY(-4px)}
+.card:hover::before{opacity:1}
+.card .num{font-family:var(--mono);font-size:.72rem;color:var(--muted-d)}
+.card .ico{width:46px;height:46px;border-radius:12px;background:var(--lime-soft);display:grid;place-items:center;margin:22px 0 22px}
+.card .ico svg{width:22px;height:22px;stroke:var(--lime)}
+.card h3{font-size:1.32rem;font-weight:800;font-stretch:112%;letter-spacing:-.02em;margin-bottom:10px}
+.card p{color:var(--muted-d);font-size:.95rem}
+
+/* MÓDULOS */
+.tabs{display:flex;flex-wrap:wrap;gap:8px;margin:44px 0 28px}
+.tab{padding:10px 18px;border-radius:999px;border:1px solid var(--line);background:transparent;color:var(--text);font-weight:600;font-size:.9rem;cursor:pointer;transition:all .25s}
+.tab:hover{border-color:var(--text)}
+.tab.on{background:var(--text);color:var(--paper);border-color:var(--text)}
+.mods{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+@media(max-width:900px){.mods{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.mods{grid-template-columns:1fr}}
+.mod{background:var(--paper);padding:26px 24px;transition:background .3s,opacity .4s,filter .4s;min-height:150px}
+.mod:hover{background:#fff}
+.mod.dim{opacity:.22;filter:grayscale(1)}
+.mod .tag{font-family:var(--mono);font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.mod .tag.new{color:var(--ink);background:var(--lime);padding:2px 8px;border-radius:4px}
+.mod h4{font-size:1.1rem;font-weight:800;font-stretch:110%;margin:10px 0 6px;letter-spacing:-.01em}
+.mod p{font-size:.9rem;color:var(--muted)}
+
+/* FEATURE blocks */
+.feat{display:grid;grid-template-columns:1fr 1.1fr;gap:70px;align-items:center;padding:90px 0;border-top:1px solid var(--line-d)}
+.feat:first-of-type{border-top:0}
+.feat.rev{grid-template-columns:1.1fr 1fr}
+.feat.rev .feat-txt{order:2}
+@media(max-width:960px){.feat,.feat.rev{grid-template-columns:1fr;gap:40px;padding:64px 0}.feat.rev .feat-txt{order:0}}
+.feat h3{font-size:clamp(1.8rem,3.6vw,2.7rem);margin:16px 0 18px}
+.feat ul{list-style:none;margin-top:26px;display:flex;flex-direction:column;gap:12px}
+.feat li{display:flex;gap:12px;color:#cdd0c4;font-size:.98rem}
+.feat li::before{content:'';flex:none;width:6px;height:6px;margin-top:10px;background:var(--lime);transform:rotate(45deg)}
+.badge-new{display:inline-block;font-family:var(--mono);font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;background:var(--lime);color:var(--ink);padding:4px 10px;border-radius:4px;font-weight:600;margin-left:8px;vertical-align:middle}
+
+.panel{background:var(--ink-2);border:1px solid var(--line-d);border-radius:var(--radius);padding:22px;position:relative;overflow:hidden}
+.panel-h{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:16px;flex-wrap:wrap}
+.panel-h b{font-family:var(--mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted-d);font-weight:500}
+.mini-btn{font-family:var(--mono);font-size:.74rem;padding:8px 14px;border-radius:8px;border:1px solid var(--lime);background:var(--lime);color:var(--ink);cursor:pointer;font-weight:600;transition:opacity .2s}
+.mini-btn.ghost{background:transparent;color:var(--lime)}
+.mini-btn:disabled{opacity:.4;cursor:default}
+
+/* conciliação */
+.conc{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:560px){.conc{grid-template-columns:1fr}}
+.conc h5{font-family:var(--mono);font-size:.64rem;color:var(--muted-d);text-transform:uppercase;letter-spacing:.1em;margin-bottom:8px;font-weight:500}
+.ext,.cob{display:flex;flex-direction:column;gap:6px}
+.ln-i{border:1px solid var(--line-d);background:#16190f;border-radius:8px;padding:9px 11px;font-size:.76rem;display:flex;justify-content:space-between;gap:10px;transition:all .45s var(--ease)}
+.ln-i span{min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:#cdd0c4}
+.ln-i strong{font-family:var(--mono);font-size:.74rem;white-space:nowrap}
+.ext .ln-i span{font-family:var(--mono);font-size:.7rem}
+.ln-i.scan{border-color:var(--lime);box-shadow:0 0 0 3px rgba(214,245,28,.12)}
+.ln-i.ok{border-color:rgba(61,220,132,.5);background:rgba(61,220,132,.07)}
+.ln-i.ok strong{color:var(--ok)}
+.conc-foot{margin-top:14px;font-family:var(--mono);font-size:.72rem;color:var(--muted-d);min-height:1.2em}
+.conc-foot b{color:var(--lime);font-weight:600}
+
+/* rateio */
+.seg{display:inline-flex;background:#16190f;border:1px solid var(--line-d);border-radius:10px;padding:3px}
+.seg button{border:0;background:transparent;color:var(--muted-d);font-size:.76rem;padding:7px 12px;border-radius:7px;cursor:pointer;font-weight:600}
+.seg button.on{background:var(--lime);color:var(--ink)}
+.bill{display:flex;justify-content:space-between;align-items:baseline;gap:10px;padding:14px 0;border-bottom:1px dashed var(--line-d);margin-bottom:14px;flex-wrap:wrap}
+.bill span{color:#cdd0c4;font-size:.92rem}
+.bill strong{font-size:1.5rem;font-weight:800;font-stretch:115%}
+.rt{display:flex;flex-direction:column;gap:10px}
+.rt-row{display:grid;grid-template-columns:120px 1fr 90px;gap:12px;align-items:center;font-size:.8rem}
+@media(max-width:480px){.rt-row{grid-template-columns:86px 1fr 78px}}
+.rt-row span{color:#cdd0c4;font-family:var(--mono);font-size:.72rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.rt-bar{height:8px;background:#22261d;border-radius:9px;overflow:hidden}
+.rt-bar i{display:block;height:100%;width:0;background:var(--lime);border-radius:9px;transition:width .8s var(--ease)}
+.rt-row strong{text-align:right;font-family:var(--mono);font-size:.74rem}
+
+/* vozchat kanban */
+.kb{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+@media(max-width:560px){.kb{grid-template-columns:repeat(2,1fr)}}
+.kb-col{background:#16190f;border:1px solid var(--line-d);border-radius:10px;padding:8px;min-height:190px}
+.kb-col h6{font-family:var(--mono);font-size:.58rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted-d);font-weight:500;margin-bottom:8px;display:flex;justify-content:space-between}
+.kb-card{background:#1f231a;border:1px solid var(--line-d);border-radius:8px;padding:8px;font-size:.7rem;margin-bottom:6px;color:#d6d8cd}
+.kb-card small{display:block;font-family:var(--mono);font-size:.56rem;color:var(--muted-d);margin-top:3px}
+.kb-card .t{display:inline-block;margin-top:6px;font-family:var(--mono);font-size:.54rem;padding:2px 6px;border-radius:4px;background:#2b3024;color:#cfd2c5}
+.kb-card.live{border-color:var(--lime);box-shadow:0 0 0 3px rgba(214,245,28,.12);animation:pop .5s var(--ease)}
+.kb-card.live .t{background:var(--lime);color:var(--ink)}
+@keyframes pop{from{transform:scale(.85);opacity:0}}
+.chat{margin-top:12px;background:#0e100b;border:1px solid var(--line-d);border-radius:12px;padding:12px;display:flex;flex-direction:column;gap:8px;min-height:120px}
+.bub{max-width:86%;font-size:.76rem;padding:8px 11px;border-radius:12px;line-height:1.45;opacity:0;transform:translateY(8px);transition:all .5s var(--ease)}
+.bub.show{opacity:1;transform:none}
+.bub.out{align-self:flex-end;background:#25301a;border:1px solid rgba(214,245,28,.25);border-bottom-right-radius:4px}
+.bub.in{align-self:flex-start;background:#1c1f18;border:1px solid var(--line-d);border-bottom-left-radius:4px}
+.bub code{display:block;margin-top:6px;font-family:var(--mono);font-size:.64rem;background:#0b0c09;padding:6px 8px;border-radius:6px;color:var(--lime);word-break:break-all}
+.bub small{display:block;font-family:var(--mono);font-size:.56rem;color:var(--muted-d);margin-top:4px;text-align:right}
+
+/* detran log */
+.log{font-family:var(--mono);font-size:.74rem;background:#0e100b;border:1px solid var(--line-d);border-radius:12px;padding:16px;min-height:236px;display:flex;flex-direction:column;gap:7px}
+.log p{opacity:0;transform:translateX(-8px);transition:all .4s var(--ease);color:#bfc2b6;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.log p.show{opacity:1;transform:none}
+.log p b{color:var(--lime);font-weight:500}
+.log p .w{color:#ffb547}
+.log p .g{color:var(--ok)}
+.log p .t{color:var(--muted-d)}
+
+/* autentique / brick */
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:560px){.duo{grid-template-columns:1fr}}
+.doc{background:#f2f1ea;color:var(--text);border-radius:12px;padding:16px;position:relative;min-height:220px}
+.doc .l{height:6px;background:#d8d7cc;border-radius:3px;margin-bottom:7px}
+.doc h6{font-size:.78rem;font-weight:800;margin-bottom:10px}
+.sig{position:absolute;left:16px;right:16px;bottom:16px;border-top:1px solid #bbb;padding-top:8px;font-family:var(--mono);font-size:.62rem;color:var(--muted);display:flex;justify-content:space-between;align-items:center}
+.stamp{font-family:var(--mono);font-size:.6rem;font-weight:600;color:#0d7a3f;border:1.5px solid #0d7a3f;padding:3px 7px;border-radius:4px;transform:rotate(-6deg) scale(1.6);opacity:0;transition:all .5s var(--ease)}
+.stamp.on{transform:rotate(-6deg) scale(1);opacity:1}
+.score{background:#16190f;border:1px solid var(--line-d);border-radius:12px;padding:16px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;min-height:220px}
+.gauge{position:relative;width:150px;height:84px}
+.gauge svg{width:150px;height:84px}
+.gauge .g-v{stroke-dasharray:204;stroke-dashoffset:204;transition:stroke-dashoffset 1.6s var(--ease)}
+.gauge strong{position:absolute;left:0;right:0;bottom:0;text-align:center;font-size:1.6rem;font-weight:900;font-stretch:120%}
+.score small{font-family:var(--mono);font-size:.62rem;color:var(--muted-d);text-transform:uppercase;letter-spacing:.1em}
+.score .verdict{font-family:var(--mono);font-size:.7rem;background:var(--lime);color:var(--ink);padding:4px 10px;border-radius:4px;font-weight:600}
+
+/* APPS */
+.apps-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+@media(max-width:900px){.apps-grid{grid-template-columns:1fr}}
+.phones{position:relative;height:560px;display:flex;justify-content:center;align-items:center}
+@media(max-width:560px){.phones{height:500px}}
+.phone{width:250px;height:510px;border-radius:40px;background:#050604;padding:10px;box-shadow:0 40px 90px -20px rgba(0,0,0,.5),inset 0 0 0 2px #2a2d24;position:absolute}
+.phone.back{transform:translateX(90px) rotate(8deg) scale(.9);opacity:.85}
+.phone.front{transform:translateX(-50px) rotate(-4deg)}
+@media(max-width:560px){.phone.back{transform:translateX(60px) rotate(8deg) scale(.82)}.phone.front{transform:translateX(-30px) rotate(-4deg) scale(.92)}}
+.scr{width:100%;height:100%;border-radius:31px;overflow:hidden;background:#f6f6f0;color:var(--text);display:flex;flex-direction:column;font-size:.72rem}
+.scr-top{background:var(--ink);color:#fff;padding:34px 16px 18px}
+.scr-top small{font-family:var(--mono);font-size:.56rem;color:var(--muted-d);text-transform:uppercase;letter-spacing:.1em}
+.scr-top b{display:block;font-size:1.05rem;font-stretch:112%;margin-top:2px}
+.due{margin:-10px 12px 0;background:var(--lime);border-radius:14px;padding:12px 14px;color:var(--ink);position:relative}
+.due small{font-size:.58rem;font-family:var(--mono);text-transform:uppercase;letter-spacing:.08em}
+.due strong{display:block;font-size:1.4rem;font-weight:900;font-stretch:115%;margin:2px 0}
+.due span{display:inline-block;background:var(--ink);color:var(--lime);font-weight:700;font-size:.62rem;padding:5px 10px;border-radius:99px;margin-top:4px}
+.icons{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;padding:14px 12px}
+.icons div{background:#fff;border:1px solid #e3e2d8;border-radius:10px;padding:9px 2px;text-align:center;font-size:.54rem;font-weight:600}
+.icons i{display:block;width:16px;height:16px;margin:0 auto 4px;border-radius:5px;background:var(--ink)}
+.list-s{padding:0 12px;display:flex;flex-direction:column;gap:6px}
+.list-s div{background:#fff;border:1px solid #e3e2d8;border-radius:10px;padding:9px 10px;display:flex;justify-content:space-between;font-size:.62rem}
+.list-s em{font-style:normal;font-family:var(--mono);font-size:.56rem;padding:1px 6px;border-radius:4px;background:#e7f9d1;color:#2f6b07}
+.list-s em.r{background:#ffe5df;color:#b3260f}
+.stores{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.store{display:flex;align-items:center;gap:12px;padding:10px 18px;border-radius:12px;background:var(--ink);color:#fff}
+.store svg{width:24px;height:24px;fill:#fff}
+.store small{display:block;font-size:.62rem;opacity:.7}
+.store b{font-size:1rem;font-weight:700}
+
+/* DEV */
+.dev{display:grid;grid-template-columns:.8fr 1.2fr;gap:70px;align-items:start}
+@media(max-width:900px){.dev{grid-template-columns:1fr;gap:40px}}
+.dev-photo{position:relative;border-radius:20px;overflow:hidden;aspect-ratio:4/5;background:var(--ink-3)}
+.dev-photo img{width:100%;height:100%;object-fit:cover;filter:grayscale(.15) contrast(1.05)}
+.dev-photo figcaption{position:absolute;left:0;right:0;bottom:0;padding:22px;background:linear-gradient(transparent,rgba(0,0,0,.85))}
+.dev-photo figcaption b{display:block;font-size:1.3rem;font-weight:800;font-stretch:115%}
+.dev-photo figcaption small{font-family:var(--mono);font-size:.7rem;color:var(--lime);letter-spacing:.06em}
+blockquote.q{font-size:clamp(1.35rem,2.6vw,1.9rem);font-weight:500;line-height:1.35;letter-spacing:-.01em;margin:22px 0 34px;color:#f3f4ee}
+blockquote.q em{font-style:italic;color:var(--lime);font-weight:700}
+.port{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line-d);border:1px solid var(--line-d);border-radius:var(--radius);overflow:hidden}
+@media(max-width:560px){.port{grid-template-columns:1fr}}
+.pj{background:var(--ink);padding:20px 22px;transition:background .3s;position:relative}
+.pj:hover{background:var(--ink-3)}
+.pj b{font-size:1.08rem;font-weight:800;font-stretch:112%;display:flex;justify-content:space-between;align-items:center;gap:10px}
+.pj b small{font-family:var(--mono);font-size:.6rem;font-weight:500;color:var(--muted-d);letter-spacing:.08em;text-transform:uppercase;white-space:nowrap}
+.pj p{font-size:.86rem;color:var(--muted-d);margin-top:4px}
+.pj.hot b small{color:var(--lime)}
+
+/* TIMELINE */
+.tl{position:relative;margin-top:70px;padding-left:46px}
+.tl::before{content:'';position:absolute;left:12px;top:6px;bottom:6px;width:2px;background:var(--line)}
+.tl-fill{position:absolute;left:12px;top:6px;width:2px;height:0;background:var(--ink);transition:height .2s linear}
+.step{position:relative;padding:0 0 46px}
+.step:last-child{padding-bottom:0}
+.step::before{content:'';position:absolute;left:-41px;top:6px;width:16px;height:16px;border-radius:50%;background:var(--paper);border:2px solid var(--muted);transition:all .4s}
+.step.in::before{background:var(--lime);border-color:var(--ink)}
+.step-h{display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 16px}
+.step-h small{font-family:var(--mono);font-size:.72rem;text-transform:uppercase;letter-spacing:.12em;color:var(--muted)}
+.step-h h4{font-size:clamp(1.25rem,2.4vw,1.6rem);font-weight:800;font-stretch:112%;letter-spacing:-.02em}
+.step-h .pill{font-family:var(--mono);font-size:.7rem;padding:3px 10px;border-radius:99px;background:var(--ink);color:var(--lime)}
+.step p{color:var(--muted);margin-top:8px;max-width:680px}
+.tl-sum{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:60px}
+@media(max-width:760px){.tl-sum{grid-template-columns:1fr}}
+.tl-sum div{border:1px solid var(--line);border-radius:14px;padding:22px;background:#fff}
+.tl-sum strong{display:block;font-size:2.4rem;font-weight:900;font-stretch:120%;letter-spacing:-.03em;line-height:1}
+.tl-sum span{display:block;color:var(--muted);font-size:.92rem;margin-top:8px}
+
+/* PRICING */
+.pricing{background:var(--ink);overflow:hidden}
+.pricing .hero-bg .glow{left:50%;top:0}
+.prices{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:60px}
+@media(max-width:900px){.prices{grid-template-columns:1fr}}
+.price{position:relative;border-radius:22px;padding:34px 30px;border:1px solid var(--line-d);background:var(--ink-2);overflow:hidden}
+.price.main{background:var(--lime);color:var(--ink);border-color:var(--lime)}
+.price .k{font-family:var(--mono);font-size:.74rem;text-transform:uppercase;letter-spacing:.14em;opacity:.7}
+.amount{display:flex;align-items:flex-start;gap:6px;margin:16px 0 4px;font-stretch:120%}
+.amount sup{font-size:1.2rem;font-weight:700;margin-top:14px}
+.amount strong{font-size:clamp(3.6rem,8vw,5.6rem);font-weight:900;letter-spacing:-.05em;line-height:1}
+.amount sub{align-self:flex-end;font-size:1rem;font-weight:600;margin-bottom:12px;opacity:.7}
+.price .note{font-size:.95rem;opacity:.75}
+.vs{margin-top:28px;padding-top:22px;border-top:1px solid rgba(0,0,0,.15)}
+.price:not(.main) .vs{border-color:var(--line-d)}
+.vs-big{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.vs-big b{font-size:clamp(2rem,4vw,2.8rem);font-weight:900;font-stretch:125%;letter-spacing:-.04em;line-height:1}
+.price:not(.main) .vs-big b{color:var(--lime)}
+.vs-big span{font-size:.95rem;font-weight:600;max-width:260px;line-height:1.35}
+.bars{margin-top:20px;display:flex;flex-direction:column;gap:10px}
+.bar{display:grid;grid-template-columns:120px 1fr;gap:12px;align-items:center;font-size:.8rem;font-weight:600}
+@media(max-width:480px){.bar{grid-template-columns:92px 1fr}}
+.bar .tr{height:12px;border-radius:9px;background:rgba(0,0,0,.12);overflow:hidden}
+.price:not(.main) .bar .tr{background:rgba(255,255,255,.08)}
+.bar .tr i{display:block;height:100%;width:0;border-radius:9px;transition:width 1.4s var(--ease)}
+.bar.them i{background:rgba(0,0,0,.35)}
+.price:not(.main) .bar.them i{background:#4a4f40}
+.bar.us i{background:var(--ink)}
+.price:not(.main) .bar.us i{background:var(--lime)}
+.switch{display:flex;align-items:center;gap:12px;margin-top:18px;cursor:pointer;user-select:none;font-weight:600;font-size:.92rem;width:max-content;max-width:100%}
+.switch input{position:absolute;opacity:0;pointer-events:none}
+.sw{width:50px;height:28px;border-radius:99px;background:#2b3024;position:relative;transition:background .3s;flex:none}
+.sw::after{content:'';position:absolute;left:3px;top:3px;width:22px;height:22px;border-radius:50%;background:#fff;transition:transform .3s var(--ease)}
+.switch input:checked+.sw{background:var(--lime)}
+.switch input:checked+.sw::after{transform:translateX(22px);background:var(--ink)}
+.switch input:focus-visible+.sw{outline:2px solid var(--lime);outline-offset:3px}
+.incl{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:18px}
+@media(max-width:900px){.incl{grid-template-columns:1fr}}
+.box{border:1px solid var(--line-d);border-radius:22px;padding:30px;background:var(--ink-2)}
+.box h4{font-size:1.25rem;font-weight:800;font-stretch:112%;margin:10px 0 18px;letter-spacing:-.01em}
+.box ul{list-style:none;display:flex;flex-direction:column;gap:11px}
+.box li{display:flex;gap:12px;font-size:.95rem;color:#cdd0c4}
+.box li svg{flex:none;width:18px;height:18px;margin-top:3px}
+.box.mine{border-color:rgba(214,245,28,.4);background:linear-gradient(160deg,rgba(214,245,28,.08),var(--ink-2) 60%)}
+.box.mine li svg{stroke:var(--lime)}
+.box.theirs li svg{stroke:#ffb547}
+.box .foot{margin-top:18px;padding-top:16px;border-top:1px solid var(--line-d);font-size:.86rem;color:var(--muted-d)}
+
+/* CTA */
+.cta{text-align:center}
+.cta h2{font-size:clamp(2.4rem,7vw,5.4rem)}
+.cta .lead{margin:22px auto 0}
+.cta-btns{display:flex;justify-content:center;flex-wrap:wrap;gap:12px;margin-top:40px}
+.terms{display:flex;justify-content:center;flex-wrap:wrap;gap:10px 30px;margin-top:50px;font-family:var(--mono);font-size:.72rem;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
+
+.conf{background:var(--ink-2);border-top:1px solid var(--line-d);padding:44px 0}
+.conf-in{display:flex;gap:20px;align-items:flex-start}
+.conf-in svg{flex:none;width:30px;height:30px;color:var(--lime);margin-top:2px}
+.conf b{display:block;font-weight:800;font-stretch:112%;font-size:1.05rem;margin-bottom:8px;color:#fff}
+.conf p{font-size:.86rem;color:var(--muted-d);max-width:900px;line-height:1.7}
+@media(max-width:560px){.conf-in{flex-direction:column;gap:12px}}
+footer{padding:40px 0;border-top:1px solid var(--line-d);font-size:.84rem;color:var(--muted-d)}
+.foot-in{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+  .rv{opacity:1;transform:none}.split .w>span{transform:none}
+}
+</style>
+</head>
+<body>
+<div class="progress" id="progress"></div>
+
+<!-- NAV -->
+<header class="nav" id="nav">
+  <div class="wrap nav-in">
+    <a href="#topo" class="brand">
+      <img src="logo-idealiza.jpg" alt="Idealiza Locações" />
+      <div><b>Idealiza Locações</b><small>Proposta comercial · Out/2026</small></div>
+    </a>
+    <nav class="nav-links">
+      <a href="#plataforma">Plataforma</a>
+      <a href="#diferenciais">Diferenciais</a>
+      <a href="#quem-faz">Quem faz</a>
+      <a href="#cronograma">Cronograma</a>
+      <a href="#investimento" class="btn btn-lime">Ver investimento</a>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="topo">
+  <div class="hero-bg"><div class="grid"></div><div class="glow" id="glow"></div></div>
+  <div class="wrap hero-in">
+    <div>
+      <span class="for rv"><img src="logo-idealiza.jpg" alt="" />Documento confidencial · exclusivo da Idealiza Locações</span>
+      <h1 class="display split" data-split>Sua locadora inteira, <span class="it hl">num só lugar.</span></h1>
+      <p class="lead rv d2">Painel administrativo, landing, aplicativos próprios na App Store e no Google Play e o VozChat ligado a tudo. A base é a mesma que já roda a Raposo Motors e a Zéloc, agora com melhorias feitas para a Idealiza.</p>
+      <div class="hero-ctas rv d3">
+        <a href="#investimento" class="btn btn-lime">Ver o investimento <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a href="#plataforma" class="btn btn-line">Conhecer a plataforma</a>
+      </div>
+      <div class="hero-meta rv d4">
+        <div><small>Entrega</small>3 semanas, apps publicados</div>
+        <div><small>Implantação</small>R$ 5.000</div>
+        <div><small>Mensalidade</small>R$ 1.500 com VozChat</div>
+      </div>
+    </div>
+
+    <div class="rv d2">
+      <div class="mock" id="mock">
+        <div class="mock-top"><i></i><i></i><i></i><span>painel.idealizalocacoes.com.br</span></div>
+        <div class="mock-body">
+          <div class="mock-side"><b class="on"></b><b></b><b></b><b></b><b></b><b></b></div>
+          <div class="mock-main">
+            <div class="kpis">
+              <div class="kpi"><small>Locados</small><strong data-count="128">0</strong></div>
+              <div class="kpi l"><small>Hoje</small><strong data-count="18460" data-money>0</strong></div>
+              <div class="kpi"><small>Atrasos</small><strong data-count="4">0</strong></div>
+              <div class="kpi"><small>Multas</small><strong data-count="2">0</strong></div>
+            </div>
+            <div class="chart">
+              <small>Receita · últimas 12 semanas</small>
+              <svg viewBox="0 0 400 120" preserveAspectRatio="none">
+                <defs><linearGradient id="ga" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#d6f51c" stop-opacity=".35"/><stop offset="1" stop-color="#d6f51c" stop-opacity="0"/></linearGradient></defs>
+                <path class="ar" d="M0,96 C30,92 50,80 80,82 S130,64 160,66 210,50 240,54 290,36 320,38 370,20 400,16 L400,120 L0,120Z" fill="url(#ga)"/>
+                <path class="ln" d="M0,96 C30,92 50,80 80,82 S130,64 160,66 210,50 240,54 290,36 320,38 370,20 400,16" fill="none" stroke="#d6f51c" stroke-width="2.5"/>
+              </svg>
+            </div>
+            <div class="rows">
+              <div class="row"><i class="dot" style="background:var(--ok)"></i><span>Contrato assinado no Autentique · Factor 150 · PMX-4D21</span><em style="background:rgba(61,220,132,.14);color:var(--ok)">assinado</em></div>
+              <div class="row"><i class="dot" style="background:#ffb547"></i><span>Multa nova encontrada no Detran-CE · RIO-2B90</span><em style="background:rgba(255,181,71,.14);color:#ffb547">vinculada</em></div>
+            </div>
+          </div>
+        </div>
+        <div class="toast" id="toast"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg><div><span id="toastT">Pix recebido · R$ 380,00</span><small id="toastS">Cobrança baixada sozinha</small></div></div>
+      </div>
+      <p class="mock-caption">Ilustração do painel · dados fictícios</p>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee" aria-hidden="true">
+  <div class="mq-track" id="mq">
+    <span>Integração bancária<i></i>Conciliação por extrato<i></i>Rateio de custos<i></i>Autentique<i></i>Multas do Detran<i></i>Consulta Brick<i></i>Rastreamento e bloqueio<i></i>VozChat<i></i>Kanban de atendimento<i></i>App Store<i></i>Google Play<i></i>Portal do Investidor<i></i></span>
+  </div>
+</div>
+
+<!-- BASE -->
+<section class="light pad" id="base">
+  <div class="wrap">
+    <div class="base-grid">
+      <div>
+        <span class="label rv">01 · O ponto de partida</span>
+        <h2 class="title display split" data-split>Não começa do zero. <span class="it">Começa pronto.</span></h2>
+      </div>
+      <div class="rv d2">
+        <p class="lead">O sistema da Idealiza nasce da plataforma que já opera a <b>Raposo Motors</b> todos os dias, junto com o <b>Portal do Investidor</b> e a <b>Área de Clientes</b> criados para a <b>Zéloc</b>. Já foi testado com a operação real de outras locadoras. Por cima disso entram as melhorias que a Idealiza pediu.</p>
+        <div class="inherit">
+          <span class="chip">Núcleo Raposo</span>
+          <span class="chip">Investidores · Zéloc</span>
+          <span class="chip">Clientes · Zéloc</span>
+          <span class="chip new">+ Conciliação por extrato</span>
+          <span class="chip new">+ Rateio em contas a pagar</span>
+          <span class="chip">Rastreamento integrado</span>
+        </div>
+      </div>
+    </div>
+    <div class="facts">
+      <div class="fact rv"><strong data-count="3">0</strong><p>locadoras já rodando o mesmo núcleo: Raposo, Zéloc e Grid.</p></div>
+      <div class="fact rv d1"><strong>3<span style="font-size:.5em"> sem.</span></strong><p>da assinatura até o sistema no ar, com os apps publicados nas lojas.</p></div>
+      <div class="fact rv d2"><strong>R$ 0</strong><p>de infraestrutura para a Idealiza. Servidor, domínio, lojas e backups ficam por minha conta.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ENTREGÁVEIS -->
+<section class="pad" id="plataforma">
+  <div class="wrap">
+    <span class="label rv">02 · O que a Idealiza recebe</span>
+    <h2 class="title display split" data-split>Quatro frentes, <span class="it hl">uma só base de dados.</span></h2>
+    <p class="lead rv d1">O cliente vê no app o mesmo dado que a equipe vê no painel e que o atendimento vê no VozChat. Ninguém precisa digitar a mesma coisa duas vezes.</p>
+    <div class="deliv">
+      <article class="card rv">
+        <span class="num">/01</span>
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg></div>
+        <h3>Landing</h3>
+        <p>Site público com frota, planos e cotação. O botão “Quero alugar” já cria o prospecto, que cai direto no kanban do VozChat.</p>
+      </article>
+      <article class="card rv d1">
+        <span class="num">/02</span>
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 9h18M8 21h8M12 18v3"/></svg></div>
+        <h3>Painel admin</h3>
+        <p>Frota, contratos, vistorias, financeiro, manutenção, multas, relatórios e permissões por perfil. É onde a operação acontece.</p>
+      </article>
+      <article class="card rv d2">
+        <span class="num">/03</span>
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M11 18h2"/></svg></div>
+        <h3>Apps próprios</h3>
+        <p>Aplicativo com a marca da Idealiza, publicado na App Store e no Google Play. O locatário paga, assina vistorias e acompanha as multas pelo app.</p>
+      </article>
+      <article class="card rv d3">
+        <span class="num">/04</span>
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12Z"/></svg></div>
+        <h3>VozChat</h3>
+        <p>WhatsApp oficial com vários atendentes, kanban de atendimento e mensagens automáticas disparadas pelo próprio sistema.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- MÓDULOS -->
+<section class="light pad" id="modulos">
+  <div class="wrap">
+    <span class="label rv">03 · Módulos</span>
+    <h2 class="title display split" data-split>Tudo o que a operação usa, <span class="it">do pátio ao caixa.</span></h2>
+    <div class="tabs rv" role="tablist">
+      <button class="tab on" data-f="all">Todos</button>
+      <button class="tab" data-f="op">Operação</button>
+      <button class="tab" data-f="fin">Financeiro</button>
+      <button class="tab" data-f="cli">Clientes</button>
+      <button class="tab" data-f="inv">Investidores</button>
+    </div>
+    <div class="mods" id="mods">
+      <div class="mod" data-c="op"><span class="tag">Operação</span><h4>Frota e veículos</h4><p>Cadastro, status, documentos, histórico completo e linha do tempo de cada veículo.</p></div>
+      <div class="mod" data-c="op"><span class="tag">Operação</span><h4>Contratos por plano</h4><p>Contrato gerado a partir do modelo da Idealiza, com aditivos, renovação e encerramento com acerto.</p></div>
+      <div class="mod" data-c="op"><span class="tag">Operação</span><h4>Vistorias</h4><p>Fotos e vídeos, assinatura do locatário e link público para o vistoriador.</p></div>
+      <div class="mod" data-c="op"><span class="tag">Operação</span><h4>Manutenção e estoque</h4><p>Ordens de serviço, troca de óleo por km, oficinas parceiras e estoque de peças.</p></div>
+      <div class="mod" data-c="op"><span class="tag">Operação</span><h4>Multas e débitos</h4><p>Robô do Detran que vincula cada multa ao locatário que estava com o veículo no dia.</p></div>
+      <div class="mod" data-c="op"><span class="tag">Operação</span><h4>Rastreamento e bloqueio</h4><p>Localização da frota no painel e bloqueio automático por atraso, com desbloqueio assim que o pagamento cai.</p></div>
+      <div class="mod" data-c="op"><span class="tag">Operação</span><h4>Seguros e sinistros</h4><p>Apólices, vencimentos e acompanhamento de cada sinistro.</p></div>
+      <div class="mod" data-c="fin"><span class="tag">Financeiro</span><h4>Contas a receber</h4><p>Cobranças por Pix e boleto geradas junto com o contrato e baixadas assim que o pagamento cai.</p></div>
+      <div class="mod" data-c="fin"><span class="tag new">Novo</span><h4>Conciliação por extrato</h4><p>Lê o extrato do banco e encontra sozinha a cobrança do cliente que já está no sistema.</p></div>
+      <div class="mod" data-c="fin"><span class="tag new">Novo</span><h4>Rateio em contas a pagar</h4><p>Divide uma despesa entre veículos ou centros de custo para mostrar o custo de cada um.</p></div>
+      <div class="mod" data-c="fin"><span class="tag">Financeiro</span><h4>Caixa e lançamentos</h4><p>Entradas, saídas, caução e tarifas bancárias, fechando com o extrato.</p></div>
+      <div class="mod" data-c="fin"><span class="tag">Financeiro</span><h4>Relatórios e painéis</h4><p>Receita, inadimplência, custo por veículo e rentabilidade, tudo exportável.</p></div>
+      <div class="mod" data-c="cli"><span class="tag">Clientes · Zéloc</span><h4>Funil de clientes</h4><p>Kanban do prospecto até a locação ativa, com origem, etapa e exportação.</p></div>
+      <div class="mod" data-c="cli"><span class="tag">Clientes</span><h4>Prospectos e análise</h4><p>Cadastro com CNH e comprovante, análise de crédito pela Brick e aprovação com um clique.</p></div>
+      <div class="mod" data-c="cli"><span class="tag">Clientes</span><h4>Locatários</h4><p>Ficha completa: contratos, pagamentos, atrasos, multas e documentos.</p></div>
+      <div class="mod" data-c="inv"><span class="tag">Investidores · Zéloc</span><h4>Portal do Investidor</h4><p>O investidor entra e vê painel, contratos e receita só dos veículos dele, sem poder alterar nada.</p></div>
+      <div class="mod" data-c="inv"><span class="tag">Investidores</span><h4>Cotas e acerto do mês</h4><p>Percentual de cada parte, custos descontados e fechamento mensal claro para os dois lados.</p></div>
+      <div class="mod" data-c="inv"><span class="tag">Investidores</span><h4>Equipe do investidor</h4><p>O investidor pode criar acessos para a própria equipe acompanhar a frota dele.</p></div>
+      <div class="mod" data-c="op"><span class="tag">Gestão</span><h4>Perfis e permissões</h4><p>Administrador, atendente, mecânico, vistoriador ou um perfil montado do seu jeito, com auditoria.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- DIFERENCIAIS -->
+<section class="pad" id="diferenciais">
+  <div class="wrap">
+    <span class="label rv">04 · Diferenciais</span>
+    <h2 class="title display split" data-split>O que o sistema <span class="it hl">faz sozinho.</span></h2>
+    <p class="lead rv d1">O valor não está só nas telas. Está no que acontece sem ninguém clicar. Experimente as demonstrações abaixo.</p>
+
+    <!-- Integração bancária + conciliação -->
+    <div class="feat">
+      <div class="feat-txt">
+        <span class="label rv">Integração bancária · Conciliação <span class="badge-new">novo</span></span>
+        <h3 class="display rv d1">O extrato encontra a cobrança. <span class="it">Não o contrário.</span></h3>
+        <p class="lead rv d2">As cobranças nascem junto com o contrato, por Pix e boleto, e são baixadas automaticamente quando o pagamento cai. Para o dinheiro que entra por fora (transferência, Pix direto na conta), a conciliação nova lê o extrato e localiza a cobrança do cliente que já existe no sistema.</p>
+        <ul class="rv d3">
+          <li>Cobranças semanais ou mensais criadas ao gerar o contrato</li>
+          <li>Juros e multa por atraso calculados automaticamente</li>
+          <li>Pagamento confirmado também libera o veículo no rastreador</li>
+          <li>Encontra o cliente pelo nome, CPF, valor e vencimento</li>
+          <li>A equipe só confirma. Não precisa digitar nem procurar</li>
+        </ul>
+      </div>
+      <div class="panel rv d2">
+        <div class="panel-h"><b>Demonstração · conciliação</b><div style="display:flex;gap:6px"><button class="mini-btn ghost" id="concReset">Reiniciar</button><button class="mini-btn" id="concGo">Conciliar extrato</button></div></div>
+        <div class="conc">
+          <div><h5>Extrato bancário</h5><div class="ext" id="ext">
+            <div class="ln-i"><span>PIX RECEB MARCOS A LIMA</span><strong>380,00</strong></div>
+            <div class="ln-i"><span>TED 341 JULIANA F COSTA</span><strong>1.300,00</strong></div>
+            <div class="ln-i"><span>PIX RECEB RAFAEL S NUNES</span><strong>300,00</strong></div>
+            <div class="ln-i"><span>PIX RECEB ANA P MOURA</span><strong>340,00</strong></div>
+          </div></div>
+          <div><h5>Cobranças em aberto</h5><div class="cob" id="cob">
+            <div class="ln-i"><span>Ana Paula Moura · sem. 14</span><strong>340,00</strong></div>
+            <div class="ln-i"><span>Marcos Antônio Lima · sem. 22</span><strong>380,00</strong></div>
+            <div class="ln-i"><span>Rafael Silva Nunes · sem. 9</span><strong>300,00</strong></div>
+            <div class="ln-i"><span>Juliana Ferreira Costa · sem. 3</span><strong>1.300,00</strong></div>
+          </div></div>
+        </div>
+        <div class="conc-foot" id="concFoot">4 lançamentos aguardando conciliação.</div>
+      </div>
+    </div>
+
+    <!-- Rateio -->
+    <div class="feat rev">
+      <div class="feat-txt">
+        <span class="label rv">Contas a pagar · Rateio <span class="badge-new">novo</span></span>
+        <h3 class="display rv d1">Uma despesa, <span class="it">dividida do jeito certo.</span></h3>
+        <p class="lead rv d2">Seguro da frota, aluguel do pátio, rastreadores. Uma única conta pode ser dividida entre veículos ou centros de custo, igualmente ou por percentual. Assim o relatório mostra quanto cada veículo custa de verdade, e o acerto com o investidor já sai com a parte certa de cada despesa.</p>
+        <ul class="rv d3">
+          <li>Rateio igual, por percentual ou por valor</li>
+          <li>Por veículo, por centro de custo ou por investidor</li>
+          <li>Reflete na rentabilidade por veículo e no acerto mensal</li>
+        </ul>
+      </div>
+      <div class="panel rv d2">
+        <div class="panel-h"><b>Demonstração · rateio</b>
+          <div class="seg" id="rtSeg"><button class="on" data-m="v">Por veículo</button><button data-m="c">Por centro de custo</button></div>
+        </div>
+        <div class="bill"><span>Seguro da frota · outubro</span><strong>R$ 2.400,00</strong></div>
+        <div class="rt" id="rt"></div>
+      </div>
+    </div>
+
+    <!-- VozChat -->
+    <div class="feat">
+      <div class="feat-txt">
+        <span class="label rv">VozChat · integrado ao sistema</span>
+        <h3 class="display rv d1">O WhatsApp sabe <span class="it">o que acontece no sistema.</span></h3>
+        <p class="lead rv d2">O VozChat é a central de WhatsApp oficial da Idealiza, com vários atendentes no mesmo número. Ele está ligado ao sistema nos dois sentidos: o que acontece na plataforma vira mensagem e etiqueta no chat, e o que começa no chat vira prospecto e locação.</p>
+        <ul class="rv d3">
+          <li>Kanban do VozChat: prospectos do site e do app entram sozinhos no quadro</li>
+          <li>Botão “Converter em locação” direto da conversa</li>
+          <li>Resultado da análise Brick vira etiqueta no contato, com o laudo dentro do chat</li>
+          <li>Lembrete de vencimento, Pix, boleto, multa e vistoria enviados automaticamente</li>
+          <li>Etiquetas de status do cliente (em dia, em atraso, encerrado) sempre atualizadas</li>
+        </ul>
+      </div>
+      <div class="panel rv d2">
+        <div class="panel-h"><b>Demonstração · kanban do VozChat</b><b class="mono" id="kbClock" style="color:var(--lime)">ao vivo</b></div>
+        <div class="kb" id="kb">
+          <div class="kb-col" data-i="0"><h6>Novo contato <span>2</span></h6><div class="kb-card">Diego Rocha<small>via Instagram</small></div></div>
+          <div class="kb-col" data-i="1"><h6>Análise Brick <span>1</span></h6><div class="kb-card">Lia Matos<small>CNH enviada</small><span class="t">em análise</span></div></div>
+          <div class="kb-col" data-i="2"><h6>Aprovado <span>1</span></h6><div class="kb-card">Caio Prado<small>Plano semanal</small><span class="t">aprovado</span></div></div>
+          <div class="kb-col" data-i="3"><h6>Contrato <span>1</span></h6><div class="kb-card">Bia Torres<small>Autentique</small><span class="t">assinado</span></div></div>
+        </div>
+        <div class="chat" id="chat"></div>
+      </div>
+    </div>
+
+    <!-- Detran -->
+    <div class="feat rev">
+      <div class="feat-txt">
+        <span class="label rv">Worker de multas · Detran</span>
+        <h3 class="display rv d1">A multa chega <span class="it">antes do susto.</span></h3>
+        <p class="lead rv d2">Um robô consulta o Detran duas vezes por dia para todos os veículos da frota. Ele traz multas, IPVA e licenciamento, descobre quem estava com o veículo na data da infração e avisa o locatário pelo WhatsApp e pelo app.</p>
+        <ul class="rv d3">
+          <li>Consulta automática 2× ao dia, sem ninguém entrar no site do Detran</li>
+          <li>Multa vinculada ao contrato ativo na data da infração</li>
+          <li>Prazo de indicação de condutor sob controle</li>
+        </ul>
+      </div>
+      <div class="panel rv d2">
+        <div class="panel-h"><b>detran-worker · execução das 06:00</b><b style="color:var(--ok)">● online</b></div>
+        <div class="log" id="log">
+          <p><span class="t">06:00:01</span> iniciando consulta · <b>frota completa</b></p>
+          <p><span class="t">06:00:04</span> PMX-4D21 · nenhum débito <span class="g">✓</span></p>
+          <p><span class="t">06:00:07</span> RIO-2B90 · <span class="w">1 multa nova</span> · art. 218 I</p>
+          <p><span class="t">06:00:07</span> → infração em 21/10 · contrato #0388 · <b>Caio Prado</b></p>
+          <p><span class="t">06:00:08</span> → aviso enviado no WhatsApp e no app <span class="g">✓</span></p>
+          <p><span class="t">06:00:11</span> SBA-7J33 · licenciamento 2027 disponível</p>
+          <p><span class="t">06:00:15</span> concluído · <b>1 multa</b> · <b>1 aviso</b> · próxima às 18:00</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Rastreamento -->
+    <div class="feat">
+      <div class="feat-txt">
+        <span class="label rv">Integração com rastreamento</span>
+        <h3 class="display rv d1">Atrasou, bloqueia. <span class="it">Pagou, libera.</span></h3>
+        <p class="lead rv d2">O sistema conversa com a plataforma de rastreamento da frota. A posição de cada veículo aparece no painel e, quando uma cobrança passa do prazo definido pela Idealiza, o bloqueio é enviado automaticamente, com aviso prévio ao locatário. Quando o pagamento é confirmado, o veículo é desbloqueado sem ninguém precisar intervir.</p>
+        <ul class="rv d3">
+          <li>Localização da frota direto no painel administrativo</li>
+          <li>Bloqueio automático após N dias de atraso, configurável pelo admin</li>
+          <li>Aviso ao locatário pelo WhatsApp antes do bloqueio</li>
+          <li>Desbloqueio automático na confirmação do pagamento, com registro de tudo</li>
+        </ul>
+      </div>
+      <div class="panel rv d2">
+        <div class="panel-h"><b>Rastreamento · RIO-2B90</b><b id="trkState" style="color:var(--ok)">● em movimento</b></div>
+        <div class="log" id="trk">
+          <p><span class="t">seg 09:00</span> cobrança semana 22 · <span class="w">vencida há 1 dia</span></p>
+          <p><span class="t">seg 09:01</span> → lembrete com Pix enviado no WhatsApp <span class="g">✓</span></p>
+          <p><span class="t">qua 09:00</span> <span class="w">3 dias de atraso</span> · aviso de bloqueio enviado</p>
+          <p><span class="t">qui 09:00</span> regra atingida · <b>comando de bloqueio enviado</b></p>
+          <p><span class="t">qui 09:02</span> veículo parado · <span class="w">bloqueado</span></p>
+          <p><span class="t">qui 11:47</span> Pix recebido · R$ 380,00 · cobrança baixada <span class="g">✓</span></p>
+          <p><span class="t">qui 11:47</span> → <b>desbloqueio automático</b> enviado <span class="g">✓</span></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Autentique + Brick -->
+    <div class="feat rev">
+      <div class="feat-txt">
+        <span class="label rv">Autentique · Consulta Brick</span>
+        <h3 class="display rv d1">Analisa o crédito e assina o contrato <span class="it">sem papel.</span></h3>
+        <p class="lead rv d2">Antes de aprovar, a consulta Brick traz o risco do prospecto com laudo. Aprovado, o contrato é montado a partir do modelo da Idealiza e enviado para assinatura digital com validade jurídica no Autentique. Quando o cliente assina, o status muda sozinho no sistema.</p>
+        <ul class="rv d3">
+          <li>Consulta de crédito com pontuação e laudo em PDF</li>
+          <li>Contrato preenchido automaticamente com os dados do cliente e do veículo</li>
+          <li>Assinatura pelo celular, com acompanhamento em tempo real</li>
+        </ul>
+      </div>
+      <div class="panel rv d2" id="duoPanel">
+        <div class="panel-h"><b>Prospecto · Caio Prado</b><button class="mini-btn" id="duoGo">Rodar análise</button></div>
+        <div class="duo">
+          <div class="score">
+            <small>Consulta Brick</small>
+            <div class="gauge"><svg viewBox="0 0 150 84"><path d="M10 78a65 65 0 0 1 130 0" fill="none" stroke="#2b3024" stroke-width="12" stroke-linecap="round"/><path class="g-v" id="gv" d="M10 78a65 65 0 0 1 130 0" fill="none" stroke="#d6f51c" stroke-width="12" stroke-linecap="round"/></svg><strong id="gnum">0</strong></div>
+            <span class="verdict" id="verdict" style="opacity:0">BAIXO RISCO · APROVADO</span>
+          </div>
+          <div class="doc">
+            <h6>Contrato de Locação nº 0412</h6>
+            <div class="l" style="width:92%"></div><div class="l" style="width:80%"></div><div class="l" style="width:88%"></div><div class="l" style="width:62%"></div><div class="l" style="width:84%"></div>
+            <div class="sig"><span>Autentique</span><span class="stamp" id="stamp">ASSINADO</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- APPS -->
+<section class="light pad" id="apps">
+  <div class="wrap apps-grid">
+    <div>
+      <span class="label rv">05 · Aplicativos</span>
+      <h2 class="title display split" data-split>A marca da Idealiza <span class="it">no celular do cliente.</span></h2>
+      <p class="lead rv d1">Apps nativos para iPhone e Android, publicados nas contas de desenvolvedor que eu mantenho e com a identidade visual da Idealiza. O locatário resolve tudo por ali, sem precisar ligar para a loja.</p>
+      <div class="inherit rv d2">
+        <span class="chip">Pix e boleto</span><span class="chip">Histórico de pagamentos</span><span class="chip">Vistorias</span><span class="chip">Multas</span><span class="chip">Contrato e documentos</span><span class="chip">Notificações</span>
+      </div>
+      <div class="stores rv d3">
+        <div class="store"><svg viewBox="0 0 24 24"><path d="M16.4 12.6c0-2.5 2-3.6 2.1-3.7-1.2-1.7-3-1.9-3.6-2-1.5-.2-3 .9-3.8.9-.8 0-2-.9-3.3-.9-1.7 0-3.3 1-4.2 2.5-1.8 3.1-.5 7.7 1.3 10.2.9 1.2 1.9 2.6 3.2 2.6 1.3-.1 1.8-.8 3.3-.8 1.6 0 2 .8 3.3.8 1.4 0 2.3-1.3 3.1-2.5 1-1.4 1.4-2.8 1.4-2.9 0 0-2.7-1-2.8-4.2ZM13.9 5.1c.7-.8 1.2-2 1-3.1-1 0-2.2.7-2.9 1.5-.6.7-1.2 1.9-1 3 1.1.1 2.2-.6 2.9-1.4Z"/></svg><div><small>Disponível na</small><b>App Store</b></div></div>
+        <div class="store"><svg viewBox="0 0 24 24"><path d="M3.6 2.3 13.5 12l-9.9 9.7c-.4-.2-.6-.7-.6-1.2V3.5c0-.5.2-1 .6-1.2Zm11.1 8.5 2.7-2.7L5.2 1.4l9.5 9.4Zm0 2.4-9.5 9.4 12.2-6.7-2.7-2.7Zm4.4-4 2.7 1.5c.8.5.8 1.6 0 2.1l-2.7 1.5-3-3 3-2.1Z"/></svg><div><small>Disponível no</small><b>Google Play</b></div></div>
+      </div>
+    </div>
+    <div class="phones rv d2">
+      <div class="phone back"><div class="scr">
+        <div class="scr-top"><small>Vistorias</small><b>Entrega · PMX-4D21</b></div>
+        <div class="list-s" style="padding-top:14px">
+          <div>Frente <em>ok</em></div><div>Lateral esquerda <em>ok</em></div><div>Lateral direita <em class="r">risco</em></div><div>Painel · km 12.480 <em>ok</em></div><div>Pneus <em>ok</em></div><div>Assinatura <em>feita</em></div>
+        </div>
+      </div></div>
+      <div class="phone front"><div class="scr">
+        <div class="scr-top"><small>Bem-vindo</small><b>Olá, Marcos</b></div>
+        <div class="due"><small>Próximo vencimento · sex 31/10</small><strong>R$ 380,00</strong><span>Pagar com Pix</span></div>
+        <div class="icons"><div><i></i>Financeiro</div><div><i></i>Vistorias</div><div><i></i>Multas</div><div><i></i>Contrato</div></div>
+        <div class="list-s">
+          <div>Semana 21 · 24/10 <em>pago</em></div><div>Semana 20 · 17/10 <em>pago</em></div><div>Semana 19 · 10/10 <em>pago</em></div><div>Multa · 21/10 <em class="r">nova</em></div>
+        </div>
+      </div></div>
+    </div>
+  </div>
+</section>
+
+<!-- DEV -->
+<section class="pad" id="quem-faz">
+  <div class="wrap dev">
+    <figure class="dev-photo rv">
+      <img src="perfil.jpg" alt="Pedro Castro" />
+      <figcaption><b>Pedro Castro</b><small>Desenvolvedor full stack · Fortaleza/CE</small></figcaption>
+    </figure>
+    <div>
+      <span class="label rv">06 · Quem constrói</span>
+      <blockquote class="q rv d1">A Idealiza não está contratando uma promessa. Está contratando <em>quem já entregou</em> e mantém no ar os sistemas de outras locadoras do Ceará.</blockquote>
+      <p class="lead rv d2" style="margin-bottom:30px">Quem atende é quem programou. Sem intermediário, sem fila de suporte e sem repassar para terceiros. Cada um destes projetos foi pensado, desenvolvido, publicado e é mantido por mim.</p>
+      <div class="port rv d3">
+        <div class="pj hot"><b>Raposo Motors <small>base da Idealiza</small></b><p>Gestão completa de locação de motos e carros elétricos, com app, Asaas, Autentique, Detran e VozChat.</p></div>
+        <div class="pj hot"><b>Zéloc <small>investidor e clientes</small></b><p>Locadora de motos com Portal do Investidor, funil de clientes e grupos de WhatsApp por locatário.</p></div>
+        <div class="pj"><b>Grid <small>locação</small></b><p>Plataforma de locação da Grid Rent a Car, com contratos, vistorias e financeiro.</p></div>
+        <div class="pj"><b>AgilLock <small>rastreamento</small></b><p>Rastreamento GPS e bloqueio remoto de frota, com painel, app e gestão financeira.</p></div>
+        <div class="pj"><b>IAPRO <small>proteção veicular</small></b><p>Associados, cotação online, vistoria por link e app para o cliente.</p></div>
+        <div class="pj"><b>SafeLock <small>análise de risco</small></b><p>Robô de WhatsApp que analisa o risco de locatários, gera laudo em PDF e cobra por Pix.</p></div>
+        <div class="pj"><b>VozChat <small>atendimento</small></b><p>Central de WhatsApp com kanban, vários atendentes e integração com sistemas de gestão.</p></div>
+        <div class="pj"><b>e outros <small>em produção</small></b><p>Bots, automações, dashboards e apps para empresas de diferentes segmentos.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CRONOGRAMA -->
+<section class="light pad" id="cronograma">
+  <div class="wrap">
+    <span class="label rv">07 · Cronograma</span>
+    <h2 class="title display split" data-split>Três semanas para estar no ar. <span class="it">Mais uma para dominar.</span></h2>
+    <div class="tl" id="tl">
+      <div class="tl-fill" id="tlFill"></div>
+      <div class="step"><div class="step-h"><small>Semana 1</small><h4>Identidade e base</h4></div><p>Marca da Idealiza aplicada no painel, na landing e nos apps. Planos, modelos de contrato, perfis de acesso e configuração das integrações: banco, Autentique, Brick, Detran e VozChat.</p></div>
+      <div class="step"><div class="step-h"><small>Semana 2</small><h4>Melhorias da Idealiza</h4></div><p>Conciliação por extrato, rateio em contas a pagar, Portal do Investidor e Área de Clientes ajustados ao fluxo da empresa. Apps enviados para revisão da Apple e do Google.</p></div>
+      <div class="step"><div class="step-h"><small>Semana 3</small><h4>Entrega</h4><span class="pill">sistema no ar · apps publicados</span></div><p>Painel, landing e VozChat em produção no domínio da Idealiza, com os apps já disponíveis na App Store e no Google Play.</p></div>
+      <div class="step"><div class="step-h"><small>Após a entrega · 3 dias</small><h4>Adaptação dos dados</h4><span class="pill">15 horas</span></div><p>Importação e preenchimento da frota, dos clientes, dos contratos em andamento e das cobranças. A Idealiza começa a usar a plataforma com a operação real dentro dela.</p></div>
+      <div class="step"><div class="step-h"><small>Em seguida · 1 semana</small><h4>Treinamento do time</h4><span class="pill">25 horas</span></div><p>Um turno por dia (manhã ou tarde, como a equipe preferir), módulo por módulo, com o time usando o sistema no trabalho do dia a dia.</p></div>
+    </div>
+    <div class="tl-sum">
+      <div class="rv"><strong>3 sem.</strong><span>de desenvolvimento, com os apps publicados</span></div>
+      <div class="rv d1"><strong>15 h</strong><span>de adaptação e preenchimento dos dados, em 3 dias</span></div>
+      <div class="rv d2"><strong>25 h</strong><span>de treinamento em 1 semana, num turno por dia</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- INVESTIMENTO -->
+<section class="pricing pad" id="investimento">
+  <div class="hero-bg"><div class="grid"></div><div class="glow"></div></div>
+  <div class="wrap" style="position:relative">
+    <span class="label rv">08 · Investimento</span>
+    <h2 class="title display split" data-split>A mesma plataforma, <span class="it hl">por bem menos.</span></h2>
+    <p class="lead rv d1">A Raposo e a Zéloc pagaram pelo desenvolvimento do núcleo. A Idealiza chega depois e recebe o sistema já maduro, com as melhorias novas incluídas, por uma fração do valor.</p>
+
+    <div class="prices">
+      <div class="price main rv">
+        <span class="k">Implantação · pagamento único</span>
+        <div class="amount"><sup>R$</sup><strong>5.000</strong></div>
+        <p class="note">Sistema completo, landing, apps publicados, adaptação dos dados (15 h) e treinamento (25 h).</p>
+        <div class="vs">
+          <div class="vs-big"><b>3× menor</b><span>Raposo e Zéloc investiram o triplo deste valor na implantação.</span></div>
+          <div class="bars" data-bars>
+            <div class="bar them"><span>Raposo e Zéloc</span><div class="tr"><i data-w="100"></i></div></div>
+            <div class="bar us"><span>Idealiza</span><div class="tr"><i data-w="33.3"></i></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="price rv d1">
+        <span class="k">Mensalidade</span>
+        <div class="amount"><sup>R$</sup><strong id="mens">1.500</strong><sub>/mês</sub></div>
+        <p class="note" id="mensNote">VozChat incluído, junto com hospedagem, manutenção, suporte e atualizações.</p>
+        <label class="switch"><input type="checkbox" id="vz" checked /><span class="sw"></span><span>Incluir VozChat</span></label>
+        <div class="vs">
+          <div class="vs-big"><b>60% mais barato</b><span>do que a mensalidade paga hoje pela Raposo e pela Zéloc.</span></div>
+          <div class="bars" data-bars>
+            <div class="bar them"><span>Raposo e Zéloc</span><div class="tr"><i data-w="100"></i></div></div>
+            <div class="bar us"><span>Idealiza</span><div class="tr"><i data-w="40" id="mensBar"></i></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="incl">
+      <div class="box mine rv">
+        <span class="label">Por minha conta</span>
+        <h4>Toda a infraestrutura</h4>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg>Servidor, banco de dados e armazenamento de fotos, vídeos e documentos</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg>Domínio e certificado de segurança (HTTPS)</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg>Contas de desenvolvedor da Apple e do Google Play</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg>Backups automáticos diários e monitoramento</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg>Manutenção, correções, atualizações e suporte direto comigo</li>
+        </ul>
+        <p class="foot">A Idealiza não paga nenhum custo de infraestrutura à parte. Está tudo dentro da mensalidade.</p>
+      </div>
+      <div class="box theirs rv d1">
+        <span class="label">Por conta da Idealiza</span>
+        <h4>Uso do WhatsApp oficial</h4>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.2"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg>Custo dos templates do WhatsApp (mensagens automáticas), cobrado pela Meta diretamente na conta da empresa</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.2"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg>Número de WhatsApp da empresa e cartão cadastrado na conta Meta Business</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.2"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg>Tarifas do banco sobre as cobranças recebidas, que são da conta da própria Idealiza</li>
+        </ul>
+        <p class="foot">Os templates são cobrados por mensagem enviada, de acordo com a tabela da Meta. Conversas que o cliente inicia e que são respondidas dentro de 24 horas não pagam template.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="light pad cta">
+  <div class="wrap">
+    <span class="label rv" style="justify-content:center">09 · Próximo passo</span>
+    <h2 class="display split" data-split style="margin-top:18px">Vamos colocar a Idealiza <span class="it">no ar?</span></h2>
+    <p class="lead rv d1">Com o aceite, a semana 1 começa e em três semanas a Idealiza está operando com sistema próprio e apps nas lojas.</p>
+    <div class="cta-btns rv d2">
+      <a class="btn btn-dark" id="waBtn" target="_blank" rel="noopener">Aprovar pelo WhatsApp <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a class="btn btn-line" href="#investimento">Rever o investimento</a>
+    </div>
+    <div class="terms">
+      <span>Confidencial · uso exclusivo</span><span>Validade: 15 dias</span><span>Implantação R$ 5.000</span><span>Mensal R$ 1.500 com VozChat · R$ 1.200 sem</span>
+    </div>
+  </div>
+</section>
+
+<section class="conf">
+  <div class="wrap conf-in">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
+    <div>
+      <b>Documento confidencial e de uso exclusivo da Idealiza Locações</b>
+      <p>Esta proposta, incluindo valores, condições, descrições de funcionalidades, telas e o conteúdo técnico e comercial aqui apresentado, foi elaborada exclusivamente para a Idealiza Locações. É proibida a sua reprodução, divulgação, encaminhamento ou compartilhamento, total ou parcial, com terceiros sem autorização prévia e por escrito de Pedro Castro. O descumprimento sujeita o responsável às medidas judiciais cabíveis, com responsabilização civil e criminal, inclusive indenização por perdas e danos, nos termos da Lei nº 9.610/1998 (Direitos Autorais), da Lei nº 9.609/1998 (Lei do Software) e da Lei nº 9.279/1996 (concorrência desleal).</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot-in">
+    <span>Proposta preparada por <b style="color:#fff">Pedro Castro</b> para a Idealiza Locações · outubro de 2026</span>
+    <a href="mailto:pedrohenriquecastro.martins@gmail.com" style="color:var(--lime)">pedrohenriquecastro.martins@gmail.com</a>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var CONFIG = {
+    whatsapp: '5585992010562',
+    msg: 'Olá, Pedro! Vi a proposta da plataforma para a Idealiza Locações e quero seguir.'
+  };
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var $ = function(s,c){return (c||document).querySelector(s)};
+  var $$ = function(s,c){return Array.prototype.slice.call((c||document).querySelectorAll(s))};
+  var sleep = function(ms){return new Promise(function(r){setTimeout(r, reduce ? 0 : ms)})};
+
+  $('#waBtn').href = 'https://wa.me/' + CONFIG.whatsapp + '?text=' + encodeURIComponent(CONFIG.msg);
+
+  // split headings into words for the reveal
+  $$('[data-split]').forEach(function(el){
+    var walk = function(node){
+      Array.prototype.slice.call(node.childNodes).forEach(function(n){
+        if(n.nodeType === 3){
+          var frag = document.createDocumentFragment();
+          n.textContent.split(/(\s+)/).forEach(function(part){
+            if(!part) return;
+            if(/^\s+$/.test(part)){ frag.appendChild(document.createTextNode(part)); return; }
+            var w = document.createElement('span'); w.className = 'w';
+            var i = document.createElement('span'); i.textContent = part;
+            w.appendChild(i); frag.appendChild(w);
+          });
+          n.parentNode.replaceChild(frag, n);
+        } else if(n.nodeType === 1){ walk(n); }
+      });
+    };
+    walk(el);
+    $$('.w>span', el).forEach(function(s,i){ s.style.transitionDelay = (i*0.05)+'s'; });
+    el.classList.add('split');
+  });
+
+  // counters
+  var fmt = function(n,money){ return money ? 'R$ ' + n.toLocaleString('pt-BR') : n.toLocaleString('pt-BR'); };
+  var count = function(el){
+    if(el._done) return; el._done = true;
+    var to = +el.dataset.count, money = el.hasAttribute('data-money'), t0 = null, dur = reduce ? 1 : 1600;
+    var tick = function(t){ if(!t0) t0 = t; var p = Math.min((t-t0)/dur,1); var e = 1-Math.pow(1-p,3);
+      el.textContent = fmt(Math.round(to*e), money); if(p<1) requestAnimationFrame(tick); };
+    requestAnimationFrame(tick);
+  };
+
+  // reveal on scroll
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(!e.isIntersecting) return;
+      var el = e.target; el.classList.add('in');
+      $$('[data-count]', el).concat(el.dataset.count ? [el] : []).forEach(count);
+      if(el.hasAttribute('data-bars')) $$('i[data-w]', el).forEach(function(i){ i.style.width = i.dataset.w + '%'; });
+      if(el.classList.contains('step')) {}
+      io.unobserve(el);
+    });
+  }, {threshold:.18, rootMargin:'0px 0px -40px 0px'});
+  $$('.rv,[data-split],.fact strong[data-count],[data-bars],.step').forEach(function(el){ io.observe(el); });
+  // hero counters run immediately
+  setTimeout(function(){ $$('.kpi [data-count]').forEach(count); }, 500);
+
+  // nav + progress + timeline fill
+  var nav = $('#nav'), bar = $('#progress'), tl = $('#tl'), tlFill = $('#tlFill');
+  var onScroll = function(){
+    var y = window.scrollY, h = document.documentElement.scrollHeight - innerHeight;
+    nav.classList.toggle('solid', y > 30);
+    bar.style.width = (h>0 ? y/h*100 : 0) + '%';
+    var r = tl.getBoundingClientRect(), mid = innerHeight*0.6;
+    var p = Math.max(0, Math.min(1, (mid - r.top) / r.height));
+    tlFill.style.height = (p * (r.height - 12)) + 'px';
+  };
+  addEventListener('scroll', onScroll, {passive:true}); onScroll();
+
+  // hero glow follows the cursor
+  var hero = $('#topo'), glow = $('#glow');
+  hero.addEventListener('pointermove', function(e){
+    var r = hero.getBoundingClientRect();
+    glow.style.setProperty('--gx', ((e.clientX-r.left)/r.width*100)+'%');
+    glow.style.setProperty('--gy', ((e.clientY-r.top)/r.height*100)+'%');
+  });
+
+  // card spotlight
+  $$('.card').forEach(function(c){
+    c.addEventListener('pointermove', function(e){
+      var r = c.getBoundingClientRect();
+      c.style.setProperty('--mx', (e.clientX-r.left)+'px'); c.style.setProperty('--my', (e.clientY-r.top)+'px');
+    });
+  });
+
+  // marquee duplicate
+  var mq = $('#mq'); mq.innerHTML += mq.innerHTML;
+
+  // hero toasts
+  var toasts = [
+    ['Pix recebido · R$ 380,00','Cobrança baixada sozinha'],
+    ['Contrato #0412 assinado','Autentique · status atualizado'],
+    ['Prospecto aprovado na Brick','Etiqueta enviada ao VozChat'],
+    ['Multa vinculada ao locatário','Aviso enviado pelo WhatsApp']
+  ];
+  var ti = 0, toast = $('#toast');
+  var cycleToast = function(){
+    $('#toastT').textContent = toasts[ti][0]; $('#toastS').textContent = toasts[ti][1];
+    toast.classList.add('show');
+    setTimeout(function(){ toast.classList.remove('show'); }, 3200);
+    ti = (ti+1) % toasts.length;
+  };
+  setTimeout(function(){ cycleToast(); setInterval(cycleToast, 4400); }, 2400);
+
+  // module filter
+  $$('.tab').forEach(function(t){
+    t.addEventListener('click', function(){
+      $$('.tab').forEach(function(x){ x.classList.remove('on'); }); t.classList.add('on');
+      var f = t.dataset.f;
+      $$('.mod').forEach(function(m){ m.classList.toggle('dim', f !== 'all' && m.dataset.c !== f); });
+    });
+  });
+
+  // conciliation demo
+  var concRunning = false;
+  var resetConc = function(){
+    $$('#ext .ln-i, #cob .ln-i').forEach(function(l){ l.classList.remove('scan','ok'); });
+    $('#concFoot').innerHTML = '4 lançamentos aguardando conciliação.';
+    $('#concGo').disabled = false;
+  };
+  var runConc = async function(){
+    if(concRunning) return; concRunning = true; resetConc(); $('#concGo').disabled = true;
+    var ext = $$('#ext .ln-i'), cob = $$('#cob .ln-i');
+    var pairs = [[0,1,'nome + valor + vencimento'],[1,3,'nome + valor (TED)'],[2,2,'CPF + valor'],[3,0,'nome + valor + vencimento']];
+    for(var k=0;k<pairs.length;k++){
+      var a = ext[pairs[k][0]], b = cob[pairs[k][1]];
+      a.classList.add('scan'); $('#concFoot').innerHTML = 'Lendo: ' + a.querySelector('span').textContent + '…';
+      await sleep(650);
+      b.classList.add('scan'); $('#concFoot').innerHTML = 'Encontrada pelo <b>' + pairs[k][2] + '</b>';
+      await sleep(700);
+      a.classList.remove('scan'); b.classList.remove('scan'); a.classList.add('ok'); b.classList.add('ok');
+      await sleep(250);
+    }
+    $('#concFoot').innerHTML = '<b>4 de 4 conciliadas</b> · nenhuma digitação · aguardando sua confirmação';
+    concRunning = false;
+  };
+  $('#concGo').addEventListener('click', runConc);
+  $('#concReset').addEventListener('click', function(){ if(!concRunning) resetConc(); });
+  var concIO = new IntersectionObserver(function(e){ if(e[0].isIntersecting){ setTimeout(runConc, 600); concIO.disconnect(); } }, {threshold:.6});
+  concIO.observe($('#ext'));
+
+  // rateio demo
+  var RT = {
+    v: [['PMX-4D21',1],['RIO-2B90',1],['SBA-7J33',1],['QTE-1A08',1],['HNO-5C44',1],['PJK-9E12',1]],
+    c: [['Motos',50],['Carros elétricos',30],['Administrativo',20]]
+  };
+  var total = 2400;
+  var money = function(n){ return n.toLocaleString('pt-BR',{minimumFractionDigits:2,maximumFractionDigits:2}); };
+  var drawRt = function(m){
+    var data = RT[m], sum = data.reduce(function(s,d){return s+d[1]},0), max = Math.max.apply(null, data.map(function(d){return d[1]}));
+    var box = $('#rt'); box.innerHTML = '';
+    data.forEach(function(d){
+      var row = document.createElement('div'); row.className = 'rt-row';
+      var pct = d[1]/sum;
+      row.innerHTML = '<span>'+d[0]+(m==='c'?' · '+d[1]+'%':'')+'</span><div class="rt-bar"><i></i></div><strong>R$ '+money(total*pct)+'</strong>';
+      box.appendChild(row);
+      requestAnimationFrame(function(){ requestAnimationFrame(function(){ row.querySelector('i').style.width = (d[1]/max*100)+'%'; }); });
+    });
+  };
+  drawRt('v');
+  $$('#rtSeg button').forEach(function(b){
+    b.addEventListener('click', function(){
+      $$('#rtSeg button').forEach(function(x){x.classList.remove('on')}); b.classList.add('on'); drawRt(b.dataset.m);
+    });
+  });
+
+  // VozChat kanban + chat loop
+  var cols = $$('#kb .kb-col'), chat = $('#chat');
+  var stages = [
+    {tag:'novo', sub:'via site · plano semanal', msg:['in','Oi! Vi no site a moto 0 km no plano semanal. Como faço?']},
+    {tag:'em análise', sub:'CNH e comprovante enviados', msg:['out','Recebemos seus documentos, Marcos. Sua análise já começou e o resultado sai em instantes.']},
+    {tag:'aprovado', sub:'Brick · baixo risco', msg:['out','Tudo certo, Marcos! Você foi aprovado. Segue o link para assinar o contrato:', 'assinar.autentique.com.br/…']},
+    {tag:'assinado', sub:'contrato #0412', msg:['out','Contrato assinado! Sua primeira cobrança de R$ 380,00 vence sexta. Pix copia e cola:', '00020126580014BR.GOV.BCB.PIX…']}
+  ];
+  var live = null, stage = 0;
+  var addBubble = function(m){
+    var b = document.createElement('div'); b.className = 'bub ' + m[0];
+    b.innerHTML = m[1] + (m[2] ? '<code>'+m[2]+'</code>' : '') + '<small>'+(m[0]==='out'?'VozChat · automático':'cliente')+'</small>';
+    chat.appendChild(b);
+    while(chat.children.length > 2) chat.removeChild(chat.firstChild);
+    requestAnimationFrame(function(){ requestAnimationFrame(function(){ b.classList.add('show'); }); });
+  };
+  var stepKb = function(){
+    if(live) live.remove();
+    var s = stages[stage];
+    live = document.createElement('div'); live.className = 'kb-card live';
+    live.innerHTML = 'Marcos Lima<small>'+s.sub+'</small><span class="t">'+s.tag+'</span>';
+    var col = cols[stage], h = col.querySelector('h6');
+    h.parentNode.insertBefore(live, h.nextSibling);
+    addBubble(s.msg);
+    stage = (stage+1) % stages.length;
+    if(stage === 0) setTimeout(function(){ chat.innerHTML=''; }, 3300);
+  };
+  var kbTimer = null;
+  var kbIO = new IntersectionObserver(function(e){
+    if(e[0].isIntersecting && !kbTimer){ stepKb(); kbTimer = setInterval(stepKb, 3400); }
+    else if(!e[0].isIntersecting && kbTimer){ clearInterval(kbTimer); kbTimer = null; }
+  }, {threshold:.3});
+  kbIO.observe($('#kb'));
+
+  // Detran log
+  var logIO = new IntersectionObserver(function(e){
+    if(!e[0].isIntersecting) return; logIO.disconnect();
+    $$('#log p').forEach(function(p,i){ setTimeout(function(){ p.classList.add('show'); }, reduce ? 0 : 300 + i*520); });
+  }, {threshold:.5});
+  logIO.observe($('#log'));
+  var trkIO = new IntersectionObserver(function(e){
+    if(!e[0].isIntersecting) return; trkIO.disconnect();
+    var ps = $$('#trk p'), st = $('#trkState');
+    ps.forEach(function(p,i){ setTimeout(function(){ p.classList.add('show');
+      if(i===4){ st.textContent='● bloqueado'; st.style.color='var(--red)'; }
+      if(i===6){ st.textContent='● liberado'; st.style.color='var(--ok)'; }
+    }, reduce ? 0 : 300 + i*650); });
+  }, {threshold:.5});
+  trkIO.observe($('#trk'));
+
+  // Brick + Autentique
+  var duoRunning = false;
+  var runDuo = async function(){
+    if(duoRunning) return; duoRunning = true;
+    var gv = $('#gv'), gn = $('#gnum'), vd = $('#verdict'), st = $('#stamp');
+    gv.style.strokeDashoffset = 204; gn.textContent = '0'; vd.style.opacity = 0; st.classList.remove('on');
+    await sleep(200);
+    var target = 812, frac = target/1000;
+    gv.style.strokeDashoffset = 204*(1-frac);
+    var t0 = null;
+    await new Promise(function(res){
+      var tick = function(t){ if(!t0) t0=t; var p = Math.min((t-t0)/(reduce?1:1600),1); gn.textContent = Math.round(target*(1-Math.pow(1-p,3))); if(p<1) requestAnimationFrame(tick); else res(); };
+      requestAnimationFrame(tick);
+    });
+    vd.style.transition = 'opacity .4s'; vd.style.opacity = 1;
+    await sleep(900); st.classList.add('on');
+    duoRunning = false;
+  };
+  $('#duoGo').addEventListener('click', runDuo);
+  var duoIO = new IntersectionObserver(function(e){ if(e[0].isIntersecting){ setTimeout(runDuo, 400); duoIO.disconnect(); } }, {threshold:.6});
+  duoIO.observe($('#duoPanel'));
+
+  // VozChat toggle on pricing
+  var vz = $('#vz'), mens = $('#mens'), cur = 1500;
+  vz.addEventListener('change', function(){
+    var to = vz.checked ? 1500 : 1200, from = cur, t0 = null; cur = to;
+    var tick = function(t){ if(!t0) t0=t; var p = Math.min((t-t0)/(reduce?1:600),1);
+      mens.textContent = Math.round(from + (to-from)*(1-Math.pow(1-p,3))).toLocaleString('pt-BR'); if(p<1) requestAnimationFrame(tick); };
+    requestAnimationFrame(tick);
+    $('#mensNote').textContent = vz.checked
+      ? 'VozChat incluído, junto com hospedagem, manutenção, suporte e atualizações.'
+      : 'Sem o VozChat. Hospedagem, manutenção, suporte e atualizações continuam incluídos.';
+    $('#mensBar').style.width = (vz.checked ? 40 : 32) + '%';
+  });
+})();
+</script>
+</body>
+</html>

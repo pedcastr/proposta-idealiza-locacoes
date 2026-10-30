@@ -1,1 +1,0 @@
-setTimeout(function(){document.title="Y="+scrollY+" H="+document.documentElement.scrollHeight+" in="+document.querySelectorAll('.rv.in').length+"/"+document.querySelectorAll('.rv').length+" ih="+innerHeight},3500)
